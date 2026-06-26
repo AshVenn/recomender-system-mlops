@@ -1,0 +1,8 @@
+dlt[duckdb]
+dbt-duckdb
+dagster
+dagster-webserver
+requests
+pandas
+scikit-learn
+joblib

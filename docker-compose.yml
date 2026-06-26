@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  dataops-stack:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app  
+      # Maps the isolated artifacts directory to your host machine
+      - ./artifacts:/app/artifacts 
+    env_file:
+      - .env
