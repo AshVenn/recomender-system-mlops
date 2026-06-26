@@ -1,0 +1,16 @@
+# Python & Virtual Environments
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Environment Variables
+.env
+
+# Dagster Storage
+.tmp_dagster_home*/
+*.yaml
+
+# MLOps Artifacts (Crucial to ignore!)
+artifacts/*.duckdb
+artifacts/*.pkl
