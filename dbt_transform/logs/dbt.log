@@ -1,0 +1,1229 @@
+[0m04:27:32.051897 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f64abbb2b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f64976c1f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f64976c1c0>]}
+
+
+============================== 04:27:32.054995 | 2ee14380-505f-42df-bd61-85614acd0d20 ==============================
+[0m04:27:32.054995 [info ] [MainThread]: Running with dbt=1.11.11
+[0m04:27:32.056451 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'debug': 'False', 'invocation_command': 'dbt run --project-dir dbt_transform --profiles-dir dbt_transform', 'target_path': 'None', 'partial_parse': 'True', 'indirect_selection': 'eager', 'warn_error': 'None', 'log_cache_events': 'False', 'use_colors': 'True', 'profiles_dir': 'dbt_transform', 'use_experimental_parser': 'False', 'static_parser': 'True', 'fail_fast': 'False', 'log_format': 'default', 'cache_selected_only': 'False', 'no_print': 'None', 'empty': 'False', 'quiet': 'False', 'version_check': 'True', 'introspect': 'True', 'log_path': 'dbt_transform/logs', 'send_anonymous_usage_stats': 'True', 'write_json': 'True', 'printer_width': '80'}
+[0m04:27:32.314622 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '2ee14380-505f-42df-bd61-85614acd0d20', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f645a76c50>]}
+[0m04:27:32.405934 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '2ee14380-505f-42df-bd61-85614acd0d20', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f6498f48e0>]}
+[0m04:27:32.409958 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m04:27:32.479576 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m04:27:32.486004 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m04:27:32.488555 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '2ee14380-505f-42df-bd61-85614acd0d20', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f63d86c0a0>]}
+[0m04:27:33.516955 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '2ee14380-505f-42df-bd61-85614acd0d20', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f63d86ec20>]}
+[0m04:27:33.629954 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_transform/target/manifest.json
+[0m04:27:33.636292 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_transform/target/semantic_manifest.json
+[0m04:27:33.650971 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '2ee14380-505f-42df-bd61-85614acd0d20', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f63c1d3460>]}
+[0m04:27:33.652663 [info ] [MainThread]: Found 1 model, 485 macros
+[0m04:27:33.654877 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '2ee14380-505f-42df-bd61-85614acd0d20', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f63c1d16c0>]}
+[0m04:27:33.657134 [info ] [MainThread]: 
+[0m04:27:33.658820 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m04:27:33.660524 [info ] [MainThread]: 
+[0m04:27:33.663195 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m04:27:33.664973 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_tmdb_pipeline'
+[0m04:27:33.694061 [debug] [ThreadPool]: Using duckdb connection "list_tmdb_pipeline"
+[0m04:27:33.697203 [debug] [ThreadPool]: On list_tmdb_pipeline: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "connection_name": "list_tmdb_pipeline"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"tmdb_pipeline"'
+    
+  
+  
+[0m04:27:33.699545 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m04:27:33.728066 [debug] [ThreadPool]: SQL status: OK in 0.028 seconds
+[0m04:27:33.730508 [debug] [ThreadPool]: On list_tmdb_pipeline: Close
+[0m04:27:33.732772 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_tmdb_pipeline, now create_tmdb_pipeline_analytics)
+[0m04:27:33.734683 [debug] [ThreadPool]: Creating schema "database: "tmdb_pipeline"
+schema: "analytics"
+"
+[0m04:27:33.742483 [debug] [ThreadPool]: Using duckdb connection "create_tmdb_pipeline_analytics"
+[0m04:27:33.745234 [debug] [ThreadPool]: On create_tmdb_pipeline_analytics: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "connection_name": "create_tmdb_pipeline_analytics"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='tmdb_pipeline'
+        and type='sqlite'
+    
+  
+[0m04:27:33.747512 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m04:27:33.751018 [debug] [ThreadPool]: SQL status: OK in 0.004 seconds
+[0m04:27:33.753819 [debug] [ThreadPool]: Using duckdb connection "create_tmdb_pipeline_analytics"
+[0m04:27:33.756007 [debug] [ThreadPool]: On create_tmdb_pipeline_analytics: BEGIN
+[0m04:27:33.758403 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m04:27:33.760045 [debug] [ThreadPool]: Using duckdb connection "create_tmdb_pipeline_analytics"
+[0m04:27:33.761683 [debug] [ThreadPool]: On create_tmdb_pipeline_analytics: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "connection_name": "create_tmdb_pipeline_analytics"} */
+
+    
+    
+        create schema if not exists "tmdb_pipeline"."analytics"
+    
+[0m04:27:33.763794 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m04:27:33.765826 [debug] [ThreadPool]: On create_tmdb_pipeline_analytics: COMMIT
+[0m04:27:33.767440 [debug] [ThreadPool]: Using duckdb connection "create_tmdb_pipeline_analytics"
+[0m04:27:33.769248 [debug] [ThreadPool]: On create_tmdb_pipeline_analytics: COMMIT
+[0m04:27:33.780123 [debug] [ThreadPool]: SQL status: OK in 0.009 seconds
+[0m04:27:33.781735 [debug] [ThreadPool]: On create_tmdb_pipeline_analytics: Close
+[0m04:27:33.783869 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_tmdb_pipeline_analytics, now list_tmdb_pipeline_analytics)
+[0m04:27:33.789575 [debug] [ThreadPool]: Using duckdb connection "list_tmdb_pipeline_analytics"
+[0m04:27:33.791010 [debug] [ThreadPool]: On list_tmdb_pipeline_analytics: BEGIN
+[0m04:27:33.792126 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m04:27:33.793991 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m04:27:33.795370 [debug] [ThreadPool]: Using duckdb connection "list_tmdb_pipeline_analytics"
+[0m04:27:33.796662 [debug] [ThreadPool]: On list_tmdb_pipeline_analytics: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "connection_name": "list_tmdb_pipeline_analytics"} */
+select
+      'tmdb_pipeline' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'analytics'
+    and lower(table_catalog) = 'tmdb_pipeline'
+  
+[0m04:27:33.800348 [debug] [ThreadPool]: SQL status: OK in 0.003 seconds
+[0m04:27:33.802279 [debug] [ThreadPool]: On list_tmdb_pipeline_analytics: ROLLBACK
+[0m04:27:33.803564 [debug] [ThreadPool]: Failed to rollback 'list_tmdb_pipeline_analytics'
+[0m04:27:33.804719 [debug] [ThreadPool]: On list_tmdb_pipeline_analytics: Close
+[0m04:27:33.806255 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '2ee14380-505f-42df-bd61-85614acd0d20', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f61c8a6890>]}
+[0m04:27:33.807729 [debug] [MainThread]: Using duckdb connection "master"
+[0m04:27:33.808975 [debug] [MainThread]: On master: BEGIN
+[0m04:27:33.810224 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m04:27:33.811731 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m04:27:33.812895 [debug] [MainThread]: On master: COMMIT
+[0m04:27:33.813997 [debug] [MainThread]: Using duckdb connection "master"
+[0m04:27:33.815141 [debug] [MainThread]: On master: COMMIT
+[0m04:27:33.816447 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m04:27:33.817623 [debug] [MainThread]: On master: Close
+[0m04:27:33.822493 [debug] [Thread-1 (]: Began running node model.movie_recommender.recommendations
+[0m04:27:33.824081 [info ] [Thread-1 (]: 1 of 1 START sql table model analytics.recommendations ......................... [RUN]
+[0m04:27:33.826381 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_tmdb_pipeline_analytics, now model.movie_recommender.recommendations)
+[0m04:27:33.827674 [debug] [Thread-1 (]: Began compiling node model.movie_recommender.recommendations
+[0m04:27:33.835293 [debug] [Thread-1 (]: Writing injected SQL for node "model.movie_recommender.recommendations"
+[0m04:27:33.850833 [debug] [Thread-1 (]: Began executing node model.movie_recommender.recommendations
+[0m04:27:33.880046 [debug] [Thread-1 (]: Writing runtime sql for node "model.movie_recommender.recommendations"
+[0m04:27:33.895347 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.recommendations"
+[0m04:27:33.896731 [debug] [Thread-1 (]: On model.movie_recommender.recommendations: BEGIN
+[0m04:27:33.898074 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m04:27:33.899606 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m04:27:33.900705 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.recommendations"
+[0m04:27:33.901893 [debug] [Thread-1 (]: On model.movie_recommender.recommendations: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "node_id": "model.movie_recommender.recommendations"} */
+
+  
+    
+    
+
+    create  table
+      "tmdb_pipeline"."analytics"."recommendations__dbt_tmp"
+  
+    as (
+      
+
+WITH raw_data AS (
+    -- dlt creates tables using the resource name: fetch_popular_movies
+    SELECT * FROM raw_movies.fetch_popular_movies
+)
+
+SELECT
+    id AS movie_id,
+    title,
+    vote_average AS rating,
+    popularity,
+    release_date,
+    overview AS description
+FROM raw_data
+-- Filter for highly-rated movies to generate the "recommendation"
+WHERE vote_average >= 7.0 
+ORDER BY popularity DESC
+LIMIT 10
+    );
+  
+  
+[0m04:27:33.907857 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m04:27:33.916457 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.recommendations"
+[0m04:27:33.917907 [debug] [Thread-1 (]: On model.movie_recommender.recommendations: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "node_id": "model.movie_recommender.recommendations"} */
+alter table "tmdb_pipeline"."analytics"."recommendations__dbt_tmp" rename to "recommendations"
+[0m04:27:33.919720 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m04:27:33.933430 [debug] [Thread-1 (]: On model.movie_recommender.recommendations: COMMIT
+[0m04:27:33.935744 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.recommendations"
+[0m04:27:33.937959 [debug] [Thread-1 (]: On model.movie_recommender.recommendations: COMMIT
+[0m04:27:33.946553 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m04:27:33.998690 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.recommendations"
+[0m04:27:34.001906 [debug] [Thread-1 (]: On model.movie_recommender.recommendations: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "node_id": "model.movie_recommender.recommendations"} */
+
+      drop table if exists "tmdb_pipeline"."analytics"."recommendations__dbt_backup" cascade
+    
+[0m04:27:34.005234 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m04:27:34.009809 [debug] [Thread-1 (]: On model.movie_recommender.recommendations: Close
+[0m04:27:34.012960 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '2ee14380-505f-42df-bd61-85614acd0d20', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f64c773310>]}
+[0m04:27:34.015328 [info ] [Thread-1 (]: 1 of 1 OK created sql table model analytics.recommendations .................... [[32mOK[0m in 0.19s]
+[0m04:27:34.018490 [debug] [Thread-1 (]: Finished running node model.movie_recommender.recommendations
+[0m04:27:34.021150 [debug] [MainThread]: Using duckdb connection "master"
+[0m04:27:34.022873 [debug] [MainThread]: On master: BEGIN
+[0m04:27:34.024039 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m04:27:34.025727 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m04:27:34.027012 [debug] [MainThread]: On master: COMMIT
+[0m04:27:34.028147 [debug] [MainThread]: Using duckdb connection "master"
+[0m04:27:34.029157 [debug] [MainThread]: On master: COMMIT
+[0m04:27:34.030585 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m04:27:34.031572 [debug] [MainThread]: On master: Close
+[0m04:27:34.032689 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m04:27:34.033524 [debug] [MainThread]: Connection 'model.movie_recommender.recommendations' was properly closed.
+[0m04:27:34.035324 [info ] [MainThread]: 
+[0m04:27:34.037627 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 0.37 seconds (0.37s).
+[0m04:27:34.040345 [debug] [MainThread]: Command end result
+[0m04:27:34.113519 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_transform/target/manifest.json
+[0m04:27:34.120706 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_transform/target/semantic_manifest.json
+[0m04:27:34.132894 [debug] [MainThread]: Wrote artifact RunExecutionResult to dbt_transform/target/run_results.json
+[0m04:27:34.134520 [info ] [MainThread]: 
+[0m04:27:34.137104 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m04:27:34.139168 [info ] [MainThread]: 
+[0m04:27:34.141054 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m04:27:34.144236 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 2.178269, "process_in_blocks": "1050", "process_kernel_time": 0.159926, "process_mem_max_rss": "168624", "process_out_blocks": "552", "process_user_time": 2.838687}
+[0m04:27:34.146070 [debug] [MainThread]: Command `dbt run` succeeded at 04:27:34.145915 after 2.18 seconds
+[0m04:27:34.147611 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f64abbb2b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f64c75d870>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77f64a81c8e0>]}
+[0m04:27:34.149504 [debug] [MainThread]: Flushing usage events
+[0m04:27:34.728245 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m04:54:03.858147 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c10154db1f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c1014078220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c10140781c0>]}
+
+
+============================== 04:54:03.861086 | c12a2dba-3fa9-4b30-a5e8-253d25f456f4 ==============================
+[0m04:54:03.861086 [info ] [MainThread]: Running with dbt=1.11.11
+[0m04:54:03.863032 [debug] [MainThread]: running dbt with arguments {'invocation_command': 'dbt run --project-dir dbt_transform --profiles-dir dbt_transform', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'version_check': 'True', 'fail_fast': 'False', 'cache_selected_only': 'False', 'log_path': 'dbt_transform/logs', 'log_cache_events': 'False', 'send_anonymous_usage_stats': 'True', 'empty': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'write_json': 'True', 'printer_width': '80', 'log_format': 'default', 'target_path': 'None', 'debug': 'False', 'static_parser': 'True', 'quiet': 'False', 'partial_parse': 'True', 'profiles_dir': 'dbt_transform', 'no_print': 'None', 'use_colors': 'True', 'warn_error': 'None'}
+[0m04:54:04.124508 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c12a2dba-3fa9-4b30-a5e8-253d25f456f4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c1014a28fd0>]}
+[0m04:54:04.201692 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c12a2dba-3fa9-4b30-a5e8-253d25f456f4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c1014faafe0>]}
+[0m04:54:04.206116 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m04:54:04.274300 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m04:54:04.402569 [debug] [MainThread]: Partial parsing enabled: 1 files deleted, 1 files added, 0 files changed.
+[0m04:54:04.403968 [debug] [MainThread]: Partial parsing: added file: movie_recommender://models/ml_feature_table.sql
+[0m04:54:04.405068 [debug] [MainThread]: Partial parsing: deleted file: movie_recommender://models/recommendations.sql
+[0m04:54:04.673421 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c12a2dba-3fa9-4b30-a5e8-253d25f456f4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c1005dd1780>]}
+[0m04:54:04.765640 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_transform/target/manifest.json
+[0m04:54:04.770038 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_transform/target/semantic_manifest.json
+[0m04:54:04.779577 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c12a2dba-3fa9-4b30-a5e8-253d25f456f4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c1005dbec80>]}
+[0m04:54:04.780884 [info ] [MainThread]: Found 1 model, 485 macros
+[0m04:54:04.783094 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c12a2dba-3fa9-4b30-a5e8-253d25f456f4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c1005dbca90>]}
+[0m04:54:04.785271 [info ] [MainThread]: 
+[0m04:54:04.786918 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m04:54:04.788572 [info ] [MainThread]: 
+[0m04:54:04.790860 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m04:54:04.792662 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_tmdb_pipeline'
+[0m04:54:04.821081 [debug] [ThreadPool]: Using duckdb connection "list_tmdb_pipeline"
+[0m04:54:04.823793 [debug] [ThreadPool]: On list_tmdb_pipeline: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "connection_name": "list_tmdb_pipeline"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"tmdb_pipeline"'
+    
+  
+  
+[0m04:54:04.826235 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m04:54:04.861817 [debug] [ThreadPool]: SQL status: OK in 0.036 seconds
+[0m04:54:04.864315 [debug] [ThreadPool]: On list_tmdb_pipeline: Close
+[0m04:54:04.866589 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_tmdb_pipeline, now create_tmdb_pipeline_analytics)
+[0m04:54:04.868315 [debug] [ThreadPool]: Creating schema "database: "tmdb_pipeline"
+schema: "analytics"
+"
+[0m04:54:04.875405 [debug] [ThreadPool]: Using duckdb connection "create_tmdb_pipeline_analytics"
+[0m04:54:04.877519 [debug] [ThreadPool]: On create_tmdb_pipeline_analytics: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "connection_name": "create_tmdb_pipeline_analytics"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='tmdb_pipeline'
+        and type='sqlite'
+    
+  
+[0m04:54:04.879293 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m04:54:04.881542 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m04:54:04.883646 [debug] [ThreadPool]: Using duckdb connection "create_tmdb_pipeline_analytics"
+[0m04:54:04.885134 [debug] [ThreadPool]: On create_tmdb_pipeline_analytics: BEGIN
+[0m04:54:04.886990 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m04:54:04.888433 [debug] [ThreadPool]: Using duckdb connection "create_tmdb_pipeline_analytics"
+[0m04:54:04.889837 [debug] [ThreadPool]: On create_tmdb_pipeline_analytics: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "connection_name": "create_tmdb_pipeline_analytics"} */
+
+    
+    
+        create schema if not exists "tmdb_pipeline"."analytics"
+    
+[0m04:54:04.892015 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m04:54:04.894222 [debug] [ThreadPool]: On create_tmdb_pipeline_analytics: COMMIT
+[0m04:54:04.896150 [debug] [ThreadPool]: Using duckdb connection "create_tmdb_pipeline_analytics"
+[0m04:54:04.897798 [debug] [ThreadPool]: On create_tmdb_pipeline_analytics: COMMIT
+[0m04:54:04.899666 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m04:54:04.900643 [debug] [ThreadPool]: On create_tmdb_pipeline_analytics: Close
+[0m04:54:04.902414 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_tmdb_pipeline_analytics, now list_tmdb_pipeline_analytics)
+[0m04:54:04.908324 [debug] [ThreadPool]: Using duckdb connection "list_tmdb_pipeline_analytics"
+[0m04:54:04.909419 [debug] [ThreadPool]: On list_tmdb_pipeline_analytics: BEGIN
+[0m04:54:04.910255 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m04:54:04.911574 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m04:54:04.912672 [debug] [ThreadPool]: Using duckdb connection "list_tmdb_pipeline_analytics"
+[0m04:54:04.913535 [debug] [ThreadPool]: On list_tmdb_pipeline_analytics: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "connection_name": "list_tmdb_pipeline_analytics"} */
+select
+      'tmdb_pipeline' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'analytics'
+    and lower(table_catalog) = 'tmdb_pipeline'
+  
+[0m04:54:04.916794 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m04:54:04.918327 [debug] [ThreadPool]: On list_tmdb_pipeline_analytics: ROLLBACK
+[0m04:54:04.919342 [debug] [ThreadPool]: Failed to rollback 'list_tmdb_pipeline_analytics'
+[0m04:54:04.920257 [debug] [ThreadPool]: On list_tmdb_pipeline_analytics: Close
+[0m04:54:04.921799 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c12a2dba-3fa9-4b30-a5e8-253d25f456f4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c0f97b03e50>]}
+[0m04:54:04.924410 [debug] [MainThread]: Using duckdb connection "master"
+[0m04:54:04.926062 [debug] [MainThread]: On master: BEGIN
+[0m04:54:04.927414 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m04:54:04.928982 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m04:54:04.929920 [debug] [MainThread]: On master: COMMIT
+[0m04:54:04.930882 [debug] [MainThread]: Using duckdb connection "master"
+[0m04:54:04.931644 [debug] [MainThread]: On master: COMMIT
+[0m04:54:04.932952 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m04:54:04.934019 [debug] [MainThread]: On master: Close
+[0m04:54:04.939620 [debug] [Thread-1 (]: Began running node model.movie_recommender.ml_feature_table
+[0m04:54:04.941226 [info ] [Thread-1 (]: 1 of 1 START sql table model analytics.ml_feature_table ........................ [RUN]
+[0m04:54:04.943233 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_tmdb_pipeline_analytics, now model.movie_recommender.ml_feature_table)
+[0m04:54:04.944549 [debug] [Thread-1 (]: Began compiling node model.movie_recommender.ml_feature_table
+[0m04:54:04.952055 [debug] [Thread-1 (]: Writing injected SQL for node "model.movie_recommender.ml_feature_table"
+[0m04:54:04.958119 [debug] [Thread-1 (]: Began executing node model.movie_recommender.ml_feature_table
+[0m04:54:04.987027 [debug] [Thread-1 (]: Writing runtime sql for node "model.movie_recommender.ml_feature_table"
+[0m04:54:05.002172 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.ml_feature_table"
+[0m04:54:05.003860 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: BEGIN
+[0m04:54:05.005156 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m04:54:05.007382 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m04:54:05.008813 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.ml_feature_table"
+[0m04:54:05.010604 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "node_id": "model.movie_recommender.ml_feature_table"} */
+
+  
+    
+    
+
+    create  table
+      "tmdb_pipeline"."analytics"."ml_feature_table__dbt_tmp"
+  
+    as (
+      
+
+WITH raw_data AS (
+    -- dlt creates this table based on the new resource function name
+    SELECT * FROM raw_movies.fetch_rich_movie_data
+)
+
+SELECT
+    id AS movie_id,
+    title,
+    -- Cast features to standard numeric types for the ML model
+    CAST(popularity AS DOUBLE) AS popularity,
+    CAST(budget AS DOUBLE) AS budget,
+    CAST(runtime AS DOUBLE) AS runtime,
+    CAST(vote_average AS DOUBLE) AS rating
+FROM raw_data
+-- Clean the data: Machine Learning models crash on NULLs or zeroes in critical fields
+WHERE budget > 0 
+  AND runtime > 0
+  AND vote_average IS NOT NULL
+    );
+  
+  
+[0m04:54:05.019279 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m04:54:05.027840 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.ml_feature_table"
+[0m04:54:05.029399 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "node_id": "model.movie_recommender.ml_feature_table"} */
+alter table "tmdb_pipeline"."analytics"."ml_feature_table__dbt_tmp" rename to "ml_feature_table"
+[0m04:54:05.031964 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m04:54:05.047555 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: COMMIT
+[0m04:54:05.049115 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.ml_feature_table"
+[0m04:54:05.050466 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: COMMIT
+[0m04:54:05.058735 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m04:54:05.066139 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.ml_feature_table"
+[0m04:54:05.068501 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "node_id": "model.movie_recommender.ml_feature_table"} */
+
+      drop table if exists "tmdb_pipeline"."analytics"."ml_feature_table__dbt_backup" cascade
+    
+[0m04:54:05.071254 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m04:54:05.075369 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: Close
+[0m04:54:05.078157 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c12a2dba-3fa9-4b30-a5e8-253d25f456f4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c101709f370>]}
+[0m04:54:05.080151 [info ] [Thread-1 (]: 1 of 1 OK created sql table model analytics.ml_feature_table ................... [[32mOK[0m in 0.13s]
+[0m04:54:05.082257 [debug] [Thread-1 (]: Finished running node model.movie_recommender.ml_feature_table
+[0m04:54:05.084944 [debug] [MainThread]: Using duckdb connection "master"
+[0m04:54:05.086208 [debug] [MainThread]: On master: BEGIN
+[0m04:54:05.087249 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m04:54:05.088699 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m04:54:05.089980 [debug] [MainThread]: On master: COMMIT
+[0m04:54:05.090920 [debug] [MainThread]: Using duckdb connection "master"
+[0m04:54:05.091878 [debug] [MainThread]: On master: COMMIT
+[0m04:54:05.093427 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m04:54:05.094867 [debug] [MainThread]: On master: Close
+[0m04:54:05.096102 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m04:54:05.097361 [debug] [MainThread]: Connection 'model.movie_recommender.ml_feature_table' was properly closed.
+[0m04:54:05.098528 [info ] [MainThread]: 
+[0m04:54:05.100642 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 0.31 seconds (0.31s).
+[0m04:54:05.102678 [debug] [MainThread]: Command end result
+[0m04:54:05.178214 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_transform/target/manifest.json
+[0m04:54:05.186451 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_transform/target/semantic_manifest.json
+[0m04:54:05.198064 [debug] [MainThread]: Wrote artifact RunExecutionResult to dbt_transform/target/run_results.json
+[0m04:54:05.199410 [info ] [MainThread]: 
+[0m04:54:05.201757 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m04:54:05.203695 [info ] [MainThread]: 
+[0m04:54:05.206591 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m04:54:05.209615 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.430178, "process_in_blocks": "4130", "process_kernel_time": 0.178943, "process_mem_max_rss": "168488", "process_out_blocks": "504", "process_user_time": 2.114785}
+[0m04:54:05.211100 [debug] [MainThread]: Command `dbt run` succeeded at 04:54:05.210964 after 1.43 seconds
+[0m04:54:05.212093 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c10154db1f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c1007f17040>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c1014a28fd0>]}
+[0m04:54:05.213240 [debug] [MainThread]: Flushing usage events
+[0m04:54:05.774694 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m05:03:21.225086 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dd0d50db1f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dd0d3c90220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dd0d3c901c0>]}
+
+
+============================== 05:03:21.230148 | 38895c16-0241-417c-ae4f-0a26eca55087 ==============================
+[0m05:03:21.230148 [info ] [MainThread]: Running with dbt=1.11.11
+[0m05:03:21.232028 [debug] [MainThread]: running dbt with arguments {'log_format': 'default', 'send_anonymous_usage_stats': 'True', 'target_path': 'None', 'profiles_dir': 'dbt_transform', 'printer_width': '80', 'static_parser': 'True', 'invocation_command': 'dbt run --project-dir dbt_transform --profiles-dir dbt_transform', 'quiet': 'False', 'log_path': 'dbt_transform/logs', 'empty': 'False', 'cache_selected_only': 'False', 'introspect': 'True', 'debug': 'False', 'use_experimental_parser': 'False', 'version_check': 'True', 'use_colors': 'True', 'write_json': 'True', 'warn_error': 'None', 'partial_parse': 'True', 'fail_fast': 'False', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m05:03:21.566697 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '38895c16-0241-417c-ae4f-0a26eca55087', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dd0d4620fd0>]}
+[0m05:03:21.663916 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '38895c16-0241-417c-ae4f-0a26eca55087', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dd0d4ba6fe0>]}
+[0m05:03:21.670533 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m05:03:21.757478 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m05:03:21.976618 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m05:03:21.978734 [debug] [MainThread]: Partial parsing: updated file: movie_recommender://models/ml_feature_table.sql
+[0m05:03:22.344572 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '38895c16-0241-417c-ae4f-0a26eca55087', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dd0c59d1780>]}
+[0m05:03:22.515298 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_transform/target/manifest.json
+[0m05:03:22.525321 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_transform/target/semantic_manifest.json
+[0m05:03:22.551309 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '38895c16-0241-417c-ae4f-0a26eca55087', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dd0c59c2680>]}
+[0m05:03:22.553863 [info ] [MainThread]: Found 1 model, 485 macros
+[0m05:03:22.556677 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '38895c16-0241-417c-ae4f-0a26eca55087', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dd0c5bd58d0>]}
+[0m05:03:22.559839 [info ] [MainThread]: 
+[0m05:03:22.562210 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m05:03:22.564489 [info ] [MainThread]: 
+[0m05:03:22.567363 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m05:03:22.570251 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_tmdb_pipeline'
+[0m05:03:22.619746 [debug] [ThreadPool]: Using duckdb connection "list_tmdb_pipeline"
+[0m05:03:22.622378 [debug] [ThreadPool]: On list_tmdb_pipeline: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "connection_name": "list_tmdb_pipeline"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"tmdb_pipeline"'
+    
+  
+  
+[0m05:03:22.625087 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:03:22.677701 [debug] [ThreadPool]: SQL status: OK in 0.053 seconds
+[0m05:03:22.680495 [debug] [ThreadPool]: On list_tmdb_pipeline: Close
+[0m05:03:22.683118 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_tmdb_pipeline, now create_tmdb_pipeline_analytics)
+[0m05:03:22.685232 [debug] [ThreadPool]: Creating schema "database: "tmdb_pipeline"
+schema: "analytics"
+"
+[0m05:03:22.694111 [debug] [ThreadPool]: Using duckdb connection "create_tmdb_pipeline_analytics"
+[0m05:03:22.696223 [debug] [ThreadPool]: On create_tmdb_pipeline_analytics: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "connection_name": "create_tmdb_pipeline_analytics"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='tmdb_pipeline'
+        and type='sqlite'
+    
+  
+[0m05:03:22.698238 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m05:03:22.701171 [debug] [ThreadPool]: SQL status: OK in 0.003 seconds
+[0m05:03:22.704121 [debug] [ThreadPool]: Using duckdb connection "create_tmdb_pipeline_analytics"
+[0m05:03:22.705983 [debug] [ThreadPool]: On create_tmdb_pipeline_analytics: BEGIN
+[0m05:03:22.708351 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m05:03:22.710044 [debug] [ThreadPool]: Using duckdb connection "create_tmdb_pipeline_analytics"
+[0m05:03:22.712092 [debug] [ThreadPool]: On create_tmdb_pipeline_analytics: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "connection_name": "create_tmdb_pipeline_analytics"} */
+
+    
+    
+        create schema if not exists "tmdb_pipeline"."analytics"
+    
+[0m05:03:22.714359 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m05:03:22.717612 [debug] [ThreadPool]: On create_tmdb_pipeline_analytics: COMMIT
+[0m05:03:22.719410 [debug] [ThreadPool]: Using duckdb connection "create_tmdb_pipeline_analytics"
+[0m05:03:22.721280 [debug] [ThreadPool]: On create_tmdb_pipeline_analytics: COMMIT
+[0m05:03:22.723700 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m05:03:22.725426 [debug] [ThreadPool]: On create_tmdb_pipeline_analytics: Close
+[0m05:03:22.728536 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_tmdb_pipeline_analytics, now list_tmdb_pipeline_analytics)
+[0m05:03:22.736706 [debug] [ThreadPool]: Using duckdb connection "list_tmdb_pipeline_analytics"
+[0m05:03:22.738611 [debug] [ThreadPool]: On list_tmdb_pipeline_analytics: BEGIN
+[0m05:03:22.740187 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m05:03:22.742770 [debug] [ThreadPool]: SQL status: OK in 0.003 seconds
+[0m05:03:22.744610 [debug] [ThreadPool]: Using duckdb connection "list_tmdb_pipeline_analytics"
+[0m05:03:22.746334 [debug] [ThreadPool]: On list_tmdb_pipeline_analytics: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "connection_name": "list_tmdb_pipeline_analytics"} */
+select
+      'tmdb_pipeline' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'analytics'
+    and lower(table_catalog) = 'tmdb_pipeline'
+  
+[0m05:03:22.751365 [debug] [ThreadPool]: SQL status: OK in 0.003 seconds
+[0m05:03:22.754400 [debug] [ThreadPool]: On list_tmdb_pipeline_analytics: ROLLBACK
+[0m05:03:22.757185 [debug] [ThreadPool]: Failed to rollback 'list_tmdb_pipeline_analytics'
+[0m05:03:22.758949 [debug] [ThreadPool]: On list_tmdb_pipeline_analytics: Close
+[0m05:03:22.761635 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '38895c16-0241-417c-ae4f-0a26eca55087', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dd09370be50>]}
+[0m05:03:22.763259 [debug] [MainThread]: Using duckdb connection "master"
+[0m05:03:22.764674 [debug] [MainThread]: On master: BEGIN
+[0m05:03:22.766113 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m05:03:22.768153 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m05:03:22.769380 [debug] [MainThread]: On master: COMMIT
+[0m05:03:22.770570 [debug] [MainThread]: Using duckdb connection "master"
+[0m05:03:22.771803 [debug] [MainThread]: On master: COMMIT
+[0m05:03:22.773589 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m05:03:22.774773 [debug] [MainThread]: On master: Close
+[0m05:03:22.782200 [debug] [Thread-1 (]: Began running node model.movie_recommender.ml_feature_table
+[0m05:03:22.784020 [info ] [Thread-1 (]: 1 of 1 START sql table model analytics.ml_feature_table ........................ [RUN]
+[0m05:03:22.786616 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_tmdb_pipeline_analytics, now model.movie_recommender.ml_feature_table)
+[0m05:03:22.788259 [debug] [Thread-1 (]: Began compiling node model.movie_recommender.ml_feature_table
+[0m05:03:22.801388 [debug] [Thread-1 (]: Writing injected SQL for node "model.movie_recommender.ml_feature_table"
+[0m05:03:22.813492 [debug] [Thread-1 (]: Began executing node model.movie_recommender.ml_feature_table
+[0m05:03:22.857243 [debug] [Thread-1 (]: Writing runtime sql for node "model.movie_recommender.ml_feature_table"
+[0m05:03:22.871180 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.ml_feature_table"
+[0m05:03:22.873181 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: BEGIN
+[0m05:03:22.875069 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m05:03:22.877599 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m05:03:22.879226 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.ml_feature_table"
+[0m05:03:22.880995 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "node_id": "model.movie_recommender.ml_feature_table"} */
+
+  
+    
+    
+
+    create  table
+      "tmdb_pipeline"."analytics"."ml_feature_table__dbt_tmp"
+  
+    as (
+      
+
+WITH raw_data AS (
+    SELECT * FROM raw_movies.fetch_movie_content_data
+)
+
+SELECT
+    id AS movie_id,
+    title,
+    popularity,
+    -- Combine the title, genres, and plot overview into one massive text block
+    -- We cast it to lowercase to help the NLP algorithm match words perfectly
+    LOWER(title || ' ' || genres || ' ' || overview) AS combined_features
+FROM raw_data
+WHERE overview IS NOT NULL 
+  AND overview != ''
+    );
+  
+  
+[0m05:03:22.888535 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m05:03:22.896250 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.ml_feature_table"
+[0m05:03:22.897873 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "node_id": "model.movie_recommender.ml_feature_table"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'analytics'
+      AND table_name = 'ml_feature_table'
+  
+[0m05:03:22.900870 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m05:03:22.903460 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.ml_feature_table"
+[0m05:03:22.905201 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "node_id": "model.movie_recommender.ml_feature_table"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'analytics'
+      AND table_name = 'ml_feature_table'
+  
+[0m05:03:22.907860 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m05:03:22.916744 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.ml_feature_table"
+[0m05:03:22.918516 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "node_id": "model.movie_recommender.ml_feature_table"} */
+alter table "tmdb_pipeline"."analytics"."ml_feature_table" rename to "ml_feature_table__dbt_backup"
+[0m05:03:22.920790 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m05:03:22.925834 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.ml_feature_table"
+[0m05:03:22.928816 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "node_id": "model.movie_recommender.ml_feature_table"} */
+alter table "tmdb_pipeline"."analytics"."ml_feature_table__dbt_tmp" rename to "ml_feature_table"
+[0m05:03:22.931132 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m05:03:22.951468 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: COMMIT
+[0m05:03:22.954635 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.ml_feature_table"
+[0m05:03:22.956248 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: COMMIT
+[0m05:03:22.967026 [debug] [Thread-1 (]: SQL status: OK in 0.009 seconds
+[0m05:03:22.975129 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.ml_feature_table"
+[0m05:03:22.976668 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "node_id": "model.movie_recommender.ml_feature_table"} */
+
+      drop table if exists "tmdb_pipeline"."analytics"."ml_feature_table__dbt_backup" cascade
+    
+[0m05:03:22.982294 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m05:03:22.986436 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: Close
+[0m05:03:22.989964 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '38895c16-0241-417c-ae4f-0a26eca55087', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dd0d6ca7370>]}
+[0m05:03:22.992617 [info ] [Thread-1 (]: 1 of 1 OK created sql table model analytics.ml_feature_table ................... [[32mOK[0m in 0.20s]
+[0m05:03:22.995542 [debug] [Thread-1 (]: Finished running node model.movie_recommender.ml_feature_table
+[0m05:03:22.999042 [debug] [MainThread]: Using duckdb connection "master"
+[0m05:03:23.000681 [debug] [MainThread]: On master: BEGIN
+[0m05:03:23.002099 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m05:03:23.004434 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m05:03:23.006378 [debug] [MainThread]: On master: COMMIT
+[0m05:03:23.008376 [debug] [MainThread]: Using duckdb connection "master"
+[0m05:03:23.011196 [debug] [MainThread]: On master: COMMIT
+[0m05:03:23.014533 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m05:03:23.017071 [debug] [MainThread]: On master: Close
+[0m05:03:23.019440 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m05:03:23.021715 [debug] [MainThread]: Connection 'model.movie_recommender.ml_feature_table' was properly closed.
+[0m05:03:23.024004 [info ] [MainThread]: 
+[0m05:03:23.028102 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 0.46 seconds (0.46s).
+[0m05:03:23.031379 [debug] [MainThread]: Command end result
+[0m05:03:23.160783 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_transform/target/manifest.json
+[0m05:03:23.169426 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_transform/target/semantic_manifest.json
+[0m05:03:23.183374 [debug] [MainThread]: Wrote artifact RunExecutionResult to dbt_transform/target/run_results.json
+[0m05:03:23.184870 [info ] [MainThread]: 
+[0m05:03:23.186976 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m05:03:23.189786 [info ] [MainThread]: 
+[0m05:03:23.193663 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m05:03:23.198271 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 2.0753934, "process_in_blocks": "38251", "process_kernel_time": 0.272901, "process_mem_max_rss": "168148", "process_out_blocks": "504", "process_user_time": 2.90823}
+[0m05:03:23.200651 [debug] [MainThread]: Command `dbt run` succeeded at 05:03:23.200421 after 2.08 seconds
+[0m05:03:23.202386 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dd0d50db1f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dd0c7b270d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7dd0d4620fd0>]}
+[0m05:03:23.204115 [debug] [MainThread]: Flushing usage events
+[0m05:03:23.848686 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m05:39:09.780701 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79161e91f2b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79161d4bc1c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79161d4bc160>]}
+
+
+============================== 05:39:09.785244 | 748bbe17-160c-4757-9c5b-e4bb2c27e66b ==============================
+[0m05:39:09.785244 [info ] [MainThread]: Running with dbt=1.11.11
+[0m05:39:09.787308 [debug] [MainThread]: running dbt with arguments {'cache_selected_only': 'False', 'log_cache_events': 'False', 'printer_width': '80', 'fail_fast': 'False', 'partial_parse': 'True', 'debug': 'False', 'send_anonymous_usage_stats': 'True', 'invocation_command': 'dbt run --project-dir dbt_transform --profiles-dir dbt_transform', 'no_print': 'None', 'empty': 'False', 'profiles_dir': 'dbt_transform', 'target_path': 'None', 'quiet': 'False', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'warn_error': 'None', 'write_json': 'True', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'version_check': 'True', 'log_path': 'dbt_transform/logs', 'use_colors': 'True', 'log_format': 'default', 'static_parser': 'True'}
+[0m05:39:10.047017 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '748bbe17-160c-4757-9c5b-e4bb2c27e66b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7916204c9870>]}
+[0m05:39:10.118485 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '748bbe17-160c-4757-9c5b-e4bb2c27e66b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79161dea5930>]}
+[0m05:39:10.123660 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m05:39:10.191753 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m05:39:10.305689 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m05:39:10.309228 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '748bbe17-160c-4757-9c5b-e4bb2c27e66b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79161de6f0a0>]}
+[0m05:39:11.297008 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '748bbe17-160c-4757-9c5b-e4bb2c27e66b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7916111d74f0>]}
+[0m05:39:11.386998 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_transform/target/manifest.json
+[0m05:39:11.395211 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_transform/target/semantic_manifest.json
+[0m05:39:11.409121 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '748bbe17-160c-4757-9c5b-e4bb2c27e66b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7916111352d0>]}
+[0m05:39:11.410351 [info ] [MainThread]: Found 1 model, 485 macros
+[0m05:39:11.411706 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '748bbe17-160c-4757-9c5b-e4bb2c27e66b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7916111d5270>]}
+[0m05:39:11.414131 [info ] [MainThread]: 
+[0m05:39:11.415818 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m05:39:11.417662 [info ] [MainThread]: 
+[0m05:39:11.419409 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m05:39:11.421280 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_reco_features'
+[0m05:39:11.456930 [debug] [ThreadPool]: Using duckdb connection "list_reco_features"
+[0m05:39:11.460475 [debug] [ThreadPool]: On list_reco_features: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "connection_name": "list_reco_features"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"reco_features"'
+    
+  
+  
+[0m05:39:11.463956 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:39:11.512991 [debug] [ThreadPool]: SQL status: OK in 0.049 seconds
+[0m05:39:11.515398 [debug] [ThreadPool]: On list_reco_features: Close
+[0m05:39:11.517455 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_reco_features, now create_reco_features_analytics)
+[0m05:39:11.518969 [debug] [ThreadPool]: Creating schema "database: "reco_features"
+schema: "analytics"
+"
+[0m05:39:11.526717 [debug] [ThreadPool]: Using duckdb connection "create_reco_features_analytics"
+[0m05:39:11.528628 [debug] [ThreadPool]: On create_reco_features_analytics: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "connection_name": "create_reco_features_analytics"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='reco_features'
+        and type='sqlite'
+    
+  
+[0m05:39:11.529944 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m05:39:11.532643 [debug] [ThreadPool]: SQL status: OK in 0.003 seconds
+[0m05:39:11.534703 [debug] [ThreadPool]: Using duckdb connection "create_reco_features_analytics"
+[0m05:39:11.536027 [debug] [ThreadPool]: On create_reco_features_analytics: BEGIN
+[0m05:39:11.538225 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m05:39:11.539436 [debug] [ThreadPool]: Using duckdb connection "create_reco_features_analytics"
+[0m05:39:11.540463 [debug] [ThreadPool]: On create_reco_features_analytics: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "connection_name": "create_reco_features_analytics"} */
+
+    
+    
+        create schema if not exists "reco_features"."analytics"
+    
+[0m05:39:11.542075 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m05:39:11.543421 [debug] [ThreadPool]: On create_reco_features_analytics: COMMIT
+[0m05:39:11.544482 [debug] [ThreadPool]: Using duckdb connection "create_reco_features_analytics"
+[0m05:39:11.545454 [debug] [ThreadPool]: On create_reco_features_analytics: COMMIT
+[0m05:39:11.552643 [debug] [ThreadPool]: SQL status: OK in 0.006 seconds
+[0m05:39:11.553712 [debug] [ThreadPool]: On create_reco_features_analytics: Close
+[0m05:39:11.555454 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_reco_features_analytics, now list_reco_features_analytics)
+[0m05:39:11.606795 [debug] [ThreadPool]: Using duckdb connection "list_reco_features_analytics"
+[0m05:39:11.609774 [debug] [ThreadPool]: On list_reco_features_analytics: BEGIN
+[0m05:39:11.612271 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m05:39:11.614714 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m05:39:11.616468 [debug] [ThreadPool]: Using duckdb connection "list_reco_features_analytics"
+[0m05:39:11.618064 [debug] [ThreadPool]: On list_reco_features_analytics: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "connection_name": "list_reco_features_analytics"} */
+select
+      'reco_features' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'analytics'
+    and lower(table_catalog) = 'reco_features'
+  
+[0m05:39:11.622543 [debug] [ThreadPool]: SQL status: OK in 0.003 seconds
+[0m05:39:11.625043 [debug] [ThreadPool]: On list_reco_features_analytics: ROLLBACK
+[0m05:39:11.628869 [debug] [ThreadPool]: Failed to rollback 'list_reco_features_analytics'
+[0m05:39:11.630870 [debug] [ThreadPool]: On list_reco_features_analytics: Close
+[0m05:39:11.632978 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '748bbe17-160c-4757-9c5b-e4bb2c27e66b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x791611136c80>]}
+[0m05:39:11.634608 [debug] [MainThread]: Using duckdb connection "master"
+[0m05:39:11.636118 [debug] [MainThread]: On master: BEGIN
+[0m05:39:11.637562 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m05:39:11.639719 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m05:39:11.641418 [debug] [MainThread]: On master: COMMIT
+[0m05:39:11.643025 [debug] [MainThread]: Using duckdb connection "master"
+[0m05:39:11.644564 [debug] [MainThread]: On master: COMMIT
+[0m05:39:11.646262 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m05:39:11.647686 [debug] [MainThread]: On master: Close
+[0m05:39:11.653826 [debug] [Thread-1 (]: Began running node model.movie_recommender.ml_feature_table
+[0m05:39:11.655622 [info ] [Thread-1 (]: 1 of 1 START sql table model analytics.ml_feature_table ........................ [RUN]
+[0m05:39:11.657802 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_reco_features_analytics, now model.movie_recommender.ml_feature_table)
+[0m05:39:11.659054 [debug] [Thread-1 (]: Began compiling node model.movie_recommender.ml_feature_table
+[0m05:39:11.667064 [debug] [Thread-1 (]: Writing injected SQL for node "model.movie_recommender.ml_feature_table"
+[0m05:39:11.675434 [debug] [Thread-1 (]: Began executing node model.movie_recommender.ml_feature_table
+[0m05:39:11.711102 [debug] [Thread-1 (]: Writing runtime sql for node "model.movie_recommender.ml_feature_table"
+[0m05:39:11.721450 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.ml_feature_table"
+[0m05:39:11.722796 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: BEGIN
+[0m05:39:11.724182 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m05:39:11.726116 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m05:39:11.727873 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.ml_feature_table"
+[0m05:39:11.729146 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "node_id": "model.movie_recommender.ml_feature_table"} */
+
+  
+    
+    
+
+    create  table
+      "reco_features"."analytics"."ml_feature_table__dbt_tmp"
+  
+    as (
+      
+
+WITH raw_data AS (
+    SELECT * FROM raw_movies.fetch_movie_content_data
+)
+
+SELECT
+    id AS movie_id,
+    title,
+    popularity,
+    -- Combine the title, genres, and plot overview into one massive text block
+    -- We cast it to lowercase to help the NLP algorithm match words perfectly
+    LOWER(title || ' ' || genres || ' ' || overview) AS combined_features
+FROM raw_data
+WHERE overview IS NOT NULL 
+  AND overview != ''
+    );
+  
+  
+[0m05:39:11.731118 [debug] [Thread-1 (]: DuckDB adapter: duckdb error: Catalog Error: Table with name "raw_movies.fetch_movie_content_data" does not exist because schema "raw_movies" does not exist.
+
+LINE 14:     SELECT * FROM raw_movies.fetch_movie_content_data
+                           ^
+[0m05:39:11.732650 [debug] [Thread-1 (]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "node_id": "model.movie_recommender.ml_feature_table"} */
+
+  
+    
+    
+
+    create  table
+      "reco_features"."analytics"."ml_feature_table__dbt_tmp"
+  
+    as (
+      
+
+WITH raw_data AS (
+    SELECT * FROM raw_movies.fetch_movie_content_data
+)
+
+SELECT
+    id AS movie_id,
+    title,
+    popularity,
+    -- Combine the title, genres, and plot overview into one massive text block
+    -- We cast it to lowercase to help the NLP algorithm match words perfectly
+    LOWER(title || ' ' || genres || ' ' || overview) AS combined_features
+FROM raw_data
+WHERE overview IS NOT NULL 
+  AND overview != ''
+    );
+  
+  
+[0m05:39:11.733995 [debug] [Thread-1 (]: DuckDB adapter: Rolling back transaction.
+[0m05:39:11.735216 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: ROLLBACK
+[0m05:39:11.738473 [debug] [Thread-1 (]: Failed to rollback 'model.movie_recommender.ml_feature_table'
+[0m05:39:11.739941 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: Close
+[0m05:39:11.745729 [debug] [Thread-1 (]: Runtime Error in model ml_feature_table (models/ml_feature_table.sql)
+  Catalog Error: Table with name "raw_movies.fetch_movie_content_data" does not exist because schema "raw_movies" does not exist.
+  
+  LINE 14:     SELECT * FROM raw_movies.fetch_movie_content_data
+                             ^
+[0m05:39:11.748528 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '748bbe17-160c-4757-9c5b-e4bb2c27e66b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79161d7f6350>]}
+[0m05:39:11.750099 [error] [Thread-1 (]: 1 of 1 ERROR creating sql table model analytics.ml_feature_table ............... [[31mERROR[0m in 0.09s]
+[0m05:39:11.752341 [debug] [Thread-1 (]: Finished running node model.movie_recommender.ml_feature_table
+[0m05:39:11.753865 [debug] [Thread-4 (]: Marking all children of 'model.movie_recommender.ml_feature_table' to be skipped because of status 'error'.  Reason: Runtime Error in model ml_feature_table (models/ml_feature_table.sql)
+  Catalog Error: Table with name "raw_movies.fetch_movie_content_data" does not exist because schema "raw_movies" does not exist.
+  
+  LINE 14:     SELECT * FROM raw_movies.fetch_movie_content_data
+                             ^.
+[0m05:39:11.756546 [debug] [MainThread]: Using duckdb connection "master"
+[0m05:39:11.757874 [debug] [MainThread]: On master: BEGIN
+[0m05:39:11.759182 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m05:39:11.760900 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m05:39:11.762228 [debug] [MainThread]: On master: COMMIT
+[0m05:39:11.763398 [debug] [MainThread]: Using duckdb connection "master"
+[0m05:39:11.764548 [debug] [MainThread]: On master: COMMIT
+[0m05:39:11.766069 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m05:39:11.767295 [debug] [MainThread]: On master: Close
+[0m05:39:11.768702 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m05:39:11.770003 [debug] [MainThread]: Connection 'model.movie_recommender.ml_feature_table' was properly closed.
+[0m05:39:11.771110 [info ] [MainThread]: 
+[0m05:39:11.773073 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 0.35 seconds (0.35s).
+[0m05:39:11.775999 [debug] [MainThread]: Command end result
+[0m05:39:11.845801 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_transform/target/manifest.json
+[0m05:39:11.851589 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_transform/target/semantic_manifest.json
+[0m05:39:11.861046 [debug] [MainThread]: Wrote artifact RunExecutionResult to dbt_transform/target/run_results.json
+[0m05:39:11.862758 [info ] [MainThread]: 
+[0m05:39:11.864970 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m05:39:11.866810 [info ] [MainThread]: 
+[0m05:39:11.868713 [error] [MainThread]: [31mFailure in model ml_feature_table (models/ml_feature_table.sql)[0m
+[0m05:39:11.870665 [error] [MainThread]:   Runtime Error in model ml_feature_table (models/ml_feature_table.sql)
+  Catalog Error: Table with name "raw_movies.fetch_movie_content_data" does not exist because schema "raw_movies" does not exist.
+  
+  LINE 14:     SELECT * FROM raw_movies.fetch_movie_content_data
+                             ^
+[0m05:39:11.872475 [info ] [MainThread]: 
+[0m05:39:11.874282 [info ] [MainThread]:   compiled code at target/compiled/movie_recommender/models/ml_feature_table.sql
+[0m05:39:11.876065 [info ] [MainThread]: 
+[0m05:39:11.878049 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=1
+[0m05:39:11.882387 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 2.1901, "process_in_blocks": "39275", "process_kernel_time": 0.224453, "process_mem_max_rss": "166316", "process_out_blocks": "504", "process_user_time": 2.833722}
+[0m05:39:11.884108 [debug] [MainThread]: Command `dbt run` failed at 05:39:11.883946 after 2.19 seconds
+[0m05:39:11.885594 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79161e91f2b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79161e5848e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x791610161de0>]}
+[0m05:39:11.887508 [debug] [MainThread]: Flushing usage events
+[0m05:39:12.494890 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m05:42:51.170196 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79b36e6a7310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79b36d25c1c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79b36d25c160>]}
+
+
+============================== 05:42:51.173781 | e2206c00-70a8-4973-8dd0-ccc69f041a0f ==============================
+[0m05:42:51.173781 [info ] [MainThread]: Running with dbt=1.11.11
+[0m05:42:51.175688 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'log_path': 'dbt_transform/logs', 'debug': 'False', 'version_check': 'True', 'log_format': 'default', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'cache_selected_only': 'False', 'invocation_command': 'dbt run --project-dir dbt_transform --profiles-dir dbt_transform', 'static_parser': 'True', 'profiles_dir': 'dbt_transform', 'empty': 'False', 'target_path': 'None', 'write_json': 'True', 'warn_error': 'None', 'use_experimental_parser': 'False', 'no_print': 'None', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'introspect': 'True', 'fail_fast': 'False', 'printer_width': '80', 'use_colors': 'True'}
+[0m05:42:51.425859 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e2206c00-70a8-4973-8dd0-ccc69f041a0f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79b37025d780>]}
+[0m05:42:51.502281 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e2206c00-70a8-4973-8dd0-ccc69f041a0f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79b368dd5de0>]}
+[0m05:42:51.506430 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m05:42:51.570829 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m05:42:51.714596 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m05:42:51.716188 [debug] [MainThread]: Partial parsing: updated file: movie_recommender://models/ml_feature_table.sql
+[0m05:42:52.014866 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e2206c00-70a8-4973-8dd0-ccc69f041a0f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79b3601e19c0>]}
+[0m05:42:52.111613 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_transform/target/manifest.json
+[0m05:42:52.120038 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_transform/target/semantic_manifest.json
+[0m05:42:52.137734 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e2206c00-70a8-4973-8dd0-ccc69f041a0f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79b3601d18d0>]}
+[0m05:42:52.139758 [info ] [MainThread]: Found 1 model, 485 macros
+[0m05:42:52.142622 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e2206c00-70a8-4973-8dd0-ccc69f041a0f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79b3601d08b0>]}
+[0m05:42:52.145217 [info ] [MainThread]: 
+[0m05:42:52.147002 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m05:42:52.149258 [info ] [MainThread]: 
+[0m05:42:52.151397 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m05:42:52.153869 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_reco_features'
+[0m05:42:52.185302 [debug] [ThreadPool]: Using duckdb connection "list_reco_features"
+[0m05:42:52.187955 [debug] [ThreadPool]: On list_reco_features: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "connection_name": "list_reco_features"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"reco_features"'
+    
+  
+  
+[0m05:42:52.190046 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m05:42:52.232095 [debug] [ThreadPool]: SQL status: OK in 0.042 seconds
+[0m05:42:52.234693 [debug] [ThreadPool]: On list_reco_features: Close
+[0m05:42:52.236889 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_reco_features, now create_reco_features_analytics)
+[0m05:42:52.238812 [debug] [ThreadPool]: Creating schema "database: "reco_features"
+schema: "analytics"
+"
+[0m05:42:52.246079 [debug] [ThreadPool]: Using duckdb connection "create_reco_features_analytics"
+[0m05:42:52.247807 [debug] [ThreadPool]: On create_reco_features_analytics: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "connection_name": "create_reco_features_analytics"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='reco_features'
+        and type='sqlite'
+    
+  
+[0m05:42:52.249497 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m05:42:52.251868 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m05:42:52.254199 [debug] [ThreadPool]: Using duckdb connection "create_reco_features_analytics"
+[0m05:42:52.255895 [debug] [ThreadPool]: On create_reco_features_analytics: BEGIN
+[0m05:42:52.257829 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m05:42:52.259445 [debug] [ThreadPool]: Using duckdb connection "create_reco_features_analytics"
+[0m05:42:52.260895 [debug] [ThreadPool]: On create_reco_features_analytics: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "connection_name": "create_reco_features_analytics"} */
+
+    
+    
+        create schema if not exists "reco_features"."analytics"
+    
+[0m05:42:52.263519 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m05:42:52.265433 [debug] [ThreadPool]: On create_reco_features_analytics: COMMIT
+[0m05:42:52.267035 [debug] [ThreadPool]: Using duckdb connection "create_reco_features_analytics"
+[0m05:42:52.268449 [debug] [ThreadPool]: On create_reco_features_analytics: COMMIT
+[0m05:42:52.270584 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m05:42:52.272128 [debug] [ThreadPool]: On create_reco_features_analytics: Close
+[0m05:42:52.274709 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_reco_features_analytics, now list_reco_features_analytics)
+[0m05:42:52.280863 [debug] [ThreadPool]: Using duckdb connection "list_reco_features_analytics"
+[0m05:42:52.282740 [debug] [ThreadPool]: On list_reco_features_analytics: BEGIN
+[0m05:42:52.284579 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m05:42:52.286422 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m05:42:52.287902 [debug] [ThreadPool]: Using duckdb connection "list_reco_features_analytics"
+[0m05:42:52.289175 [debug] [ThreadPool]: On list_reco_features_analytics: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "connection_name": "list_reco_features_analytics"} */
+select
+      'reco_features' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'analytics'
+    and lower(table_catalog) = 'reco_features'
+  
+[0m05:42:52.293284 [debug] [ThreadPool]: SQL status: OK in 0.003 seconds
+[0m05:42:52.296362 [debug] [ThreadPool]: On list_reco_features_analytics: ROLLBACK
+[0m05:42:52.298171 [debug] [ThreadPool]: Failed to rollback 'list_reco_features_analytics'
+[0m05:42:52.299601 [debug] [ThreadPool]: On list_reco_features_analytics: Close
+[0m05:42:52.301464 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e2206c00-70a8-4973-8dd0-ccc69f041a0f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79b3601d0520>]}
+[0m05:42:52.304082 [debug] [MainThread]: Using duckdb connection "master"
+[0m05:42:52.305508 [debug] [MainThread]: On master: BEGIN
+[0m05:42:52.307011 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m05:42:52.309268 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m05:42:52.310863 [debug] [MainThread]: On master: COMMIT
+[0m05:42:52.312253 [debug] [MainThread]: Using duckdb connection "master"
+[0m05:42:52.313690 [debug] [MainThread]: On master: COMMIT
+[0m05:42:52.315801 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m05:42:52.317193 [debug] [MainThread]: On master: Close
+[0m05:42:52.325767 [debug] [Thread-1 (]: Began running node model.movie_recommender.ml_feature_table
+[0m05:42:52.327766 [info ] [Thread-1 (]: 1 of 1 START sql table model analytics.ml_feature_table ........................ [RUN]
+[0m05:42:52.330509 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_reco_features_analytics, now model.movie_recommender.ml_feature_table)
+[0m05:42:52.332214 [debug] [Thread-1 (]: Began compiling node model.movie_recommender.ml_feature_table
+[0m05:42:52.340517 [debug] [Thread-1 (]: Writing injected SQL for node "model.movie_recommender.ml_feature_table"
+[0m05:42:52.351168 [debug] [Thread-1 (]: Began executing node model.movie_recommender.ml_feature_table
+[0m05:42:52.387657 [debug] [Thread-1 (]: Writing runtime sql for node "model.movie_recommender.ml_feature_table"
+[0m05:42:52.402679 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.ml_feature_table"
+[0m05:42:52.404206 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: BEGIN
+[0m05:42:52.405670 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m05:42:52.407743 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m05:42:52.409195 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.ml_feature_table"
+[0m05:42:52.410824 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "node_id": "model.movie_recommender.ml_feature_table"} */
+
+  
+    
+    
+
+    create  table
+      "reco_features"."analytics"."ml_feature_table__dbt_tmp"
+  
+    as (
+      
+
+WITH raw_data AS (
+    -- Read from the linked API Database, using the new function name
+    SELECT * FROM api_db.raw_movies.fetch_all_movie_data
+)
+
+SELECT
+    id AS movie_id,
+    title,
+    popularity,
+    -- Combine text fields for the NLP Recommendation Model
+    LOWER(title || ' ' || genres_flat || ' ' || overview) AS combined_features
+FROM raw_data
+WHERE overview IS NOT NULL 
+  AND overview != ''
+    );
+  
+  
+[0m05:42:52.416967 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m05:42:52.424143 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.ml_feature_table"
+[0m05:42:52.425737 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "node_id": "model.movie_recommender.ml_feature_table"} */
+alter table "reco_features"."analytics"."ml_feature_table__dbt_tmp" rename to "ml_feature_table"
+[0m05:42:52.427699 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m05:42:52.441349 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: COMMIT
+[0m05:42:52.443254 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.ml_feature_table"
+[0m05:42:52.444567 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: COMMIT
+[0m05:42:52.454195 [debug] [Thread-1 (]: SQL status: OK in 0.008 seconds
+[0m05:42:52.460214 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.ml_feature_table"
+[0m05:42:52.462141 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "node_id": "model.movie_recommender.ml_feature_table"} */
+
+      drop table if exists "reco_features"."analytics"."ml_feature_table__dbt_backup" cascade
+    
+[0m05:42:52.464297 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m05:42:52.467695 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: Close
+[0m05:42:52.471224 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e2206c00-70a8-4973-8dd0-ccc69f041a0f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79b3702734c0>]}
+[0m05:42:52.474029 [info ] [Thread-1 (]: 1 of 1 OK created sql table model analytics.ml_feature_table ................... [[32mOK[0m in 0.14s]
+[0m05:42:52.476907 [debug] [Thread-1 (]: Finished running node model.movie_recommender.ml_feature_table
+[0m05:42:52.479585 [debug] [MainThread]: Using duckdb connection "master"
+[0m05:42:52.481008 [debug] [MainThread]: On master: BEGIN
+[0m05:42:52.482428 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m05:42:52.484138 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m05:42:52.485579 [debug] [MainThread]: On master: COMMIT
+[0m05:42:52.486742 [debug] [MainThread]: Using duckdb connection "master"
+[0m05:42:52.487939 [debug] [MainThread]: On master: COMMIT
+[0m05:42:52.489751 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m05:42:52.491072 [debug] [MainThread]: On master: Close
+[0m05:42:52.492507 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m05:42:52.493716 [debug] [MainThread]: Connection 'model.movie_recommender.ml_feature_table' was properly closed.
+[0m05:42:52.494969 [info ] [MainThread]: 
+[0m05:42:52.496760 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 0.34 seconds (0.34s).
+[0m05:42:52.499105 [debug] [MainThread]: Command end result
+[0m05:42:52.570752 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_transform/target/manifest.json
+[0m05:42:52.576762 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_transform/target/semantic_manifest.json
+[0m05:42:52.587571 [debug] [MainThread]: Wrote artifact RunExecutionResult to dbt_transform/target/run_results.json
+[0m05:42:52.589234 [info ] [MainThread]: 
+[0m05:42:52.591529 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m05:42:52.593357 [info ] [MainThread]: 
+[0m05:42:52.596466 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m05:42:52.600126 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.5188726, "process_in_blocks": "5147", "process_kernel_time": 0.211694, "process_mem_max_rss": "167852", "process_out_blocks": "504", "process_user_time": 2.112869}
+[0m05:42:52.602195 [debug] [MainThread]: Command `dbt run` succeeded at 05:42:52.601780 after 1.52 seconds
+[0m05:42:52.603740 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79b36e6a7310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79b360f89a50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x79b37025d780>]}
+[0m05:42:52.604882 [debug] [MainThread]: Flushing usage events
+[0m05:42:53.185358 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m06:06:25.387682 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74d1873172b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74d185ecc1c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74d185ecc160>]}
+
+
+============================== 06:06:25.390697 | 3942b3be-e11a-4dfa-9d3f-f6bf7355936c ==============================
+[0m06:06:25.390697 [info ] [MainThread]: Running with dbt=1.11.11
+[0m06:06:25.392410 [debug] [MainThread]: running dbt with arguments {'use_experimental_parser': 'False', 'warn_error': 'None', 'static_parser': 'True', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt run --project-dir dbt_transform --profiles-dir dbt_transform', 'target_path': 'None', 'debug': 'False', 'partial_parse': 'True', 'empty': 'False', 'write_json': 'True', 'quiet': 'False', 'cache_selected_only': 'False', 'printer_width': '80', 'profiles_dir': 'dbt_transform', 'use_colors': 'True', 'fail_fast': 'False', 'log_path': 'dbt_transform/logs', 'version_check': 'True', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'send_anonymous_usage_stats': 'True', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m06:06:25.663728 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3942b3be-e11a-4dfa-9d3f-f6bf7355936c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74d188eb9870>]}
+[0m06:06:25.741990 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3942b3be-e11a-4dfa-9d3f-f6bf7355936c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74d186899930>]}
+[0m06:06:25.745266 [info ] [MainThread]: Registered adapter: duckdb=1.10.1
+[0m06:06:25.816156 [debug] [MainThread]: checksum: 30a8cc8fdcbf66701b0944d4ccce3fa46dd04b61e5df68b9f16d57b2e0e3f0be, vars: {}, profile: , target: , version: 1.11.11
+[0m06:06:25.970445 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m06:06:25.972911 [debug] [MainThread]: Partial parsing: updated file: movie_recommender://models/ml_feature_table.sql
+[0m06:06:26.254150 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '3942b3be-e11a-4dfa-9d3f-f6bf7355936c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74d1781dd990>]}
+[0m06:06:26.358281 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_transform/target/manifest.json
+[0m06:06:26.364184 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_transform/target/semantic_manifest.json
+[0m06:06:26.377509 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '3942b3be-e11a-4dfa-9d3f-f6bf7355936c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74d1781c9900>]}
+[0m06:06:26.378882 [info ] [MainThread]: Found 1 model, 485 macros
+[0m06:06:26.380939 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3942b3be-e11a-4dfa-9d3f-f6bf7355936c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74d1781c87f0>]}
+[0m06:06:26.383032 [info ] [MainThread]: 
+[0m06:06:26.385464 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m06:06:26.387658 [info ] [MainThread]: 
+[0m06:06:26.389813 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m06:06:26.391741 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_reco_features'
+[0m06:06:26.423464 [debug] [ThreadPool]: Using duckdb connection "list_reco_features"
+[0m06:06:26.426270 [debug] [ThreadPool]: On list_reco_features: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "connection_name": "list_reco_features"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"reco_features"'
+    
+  
+  
+[0m06:06:26.428096 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m06:06:26.469942 [debug] [ThreadPool]: SQL status: OK in 0.042 seconds
+[0m06:06:26.472153 [debug] [ThreadPool]: On list_reco_features: Close
+[0m06:06:26.474181 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_reco_features, now create_reco_features_analytics)
+[0m06:06:26.475802 [debug] [ThreadPool]: Creating schema "database: "reco_features"
+schema: "analytics"
+"
+[0m06:06:26.483395 [debug] [ThreadPool]: Using duckdb connection "create_reco_features_analytics"
+[0m06:06:26.485305 [debug] [ThreadPool]: On create_reco_features_analytics: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "connection_name": "create_reco_features_analytics"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='reco_features'
+        and type='sqlite'
+    
+  
+[0m06:06:26.486578 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m06:06:26.488806 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m06:06:26.491027 [debug] [ThreadPool]: Using duckdb connection "create_reco_features_analytics"
+[0m06:06:26.492468 [debug] [ThreadPool]: On create_reco_features_analytics: BEGIN
+[0m06:06:26.494163 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m06:06:26.495450 [debug] [ThreadPool]: Using duckdb connection "create_reco_features_analytics"
+[0m06:06:26.496625 [debug] [ThreadPool]: On create_reco_features_analytics: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "connection_name": "create_reco_features_analytics"} */
+
+    
+    
+        create schema if not exists "reco_features"."analytics"
+    
+[0m06:06:26.498230 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m06:06:26.499883 [debug] [ThreadPool]: On create_reco_features_analytics: COMMIT
+[0m06:06:26.500972 [debug] [ThreadPool]: Using duckdb connection "create_reco_features_analytics"
+[0m06:06:26.502088 [debug] [ThreadPool]: On create_reco_features_analytics: COMMIT
+[0m06:06:26.503758 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m06:06:26.505191 [debug] [ThreadPool]: On create_reco_features_analytics: Close
+[0m06:06:26.507292 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_reco_features_analytics, now list_reco_features_analytics)
+[0m06:06:26.512945 [debug] [ThreadPool]: Using duckdb connection "list_reco_features_analytics"
+[0m06:06:26.514063 [debug] [ThreadPool]: On list_reco_features_analytics: BEGIN
+[0m06:06:26.515034 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m06:06:26.516941 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m06:06:26.518357 [debug] [ThreadPool]: Using duckdb connection "list_reco_features_analytics"
+[0m06:06:26.519376 [debug] [ThreadPool]: On list_reco_features_analytics: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "connection_name": "list_reco_features_analytics"} */
+select
+      'reco_features' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'analytics'
+    and lower(table_catalog) = 'reco_features'
+  
+[0m06:06:26.523691 [debug] [ThreadPool]: SQL status: OK in 0.003 seconds
+[0m06:06:26.525947 [debug] [ThreadPool]: On list_reco_features_analytics: ROLLBACK
+[0m06:06:26.527503 [debug] [ThreadPool]: Failed to rollback 'list_reco_features_analytics'
+[0m06:06:26.528694 [debug] [ThreadPool]: On list_reco_features_analytics: Close
+[0m06:06:26.530661 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '3942b3be-e11a-4dfa-9d3f-f6bf7355936c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74d17801d1b0>]}
+[0m06:06:26.532044 [debug] [MainThread]: Using duckdb connection "master"
+[0m06:06:26.533224 [debug] [MainThread]: On master: BEGIN
+[0m06:06:26.534360 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m06:06:26.536029 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m06:06:26.537187 [debug] [MainThread]: On master: COMMIT
+[0m06:06:26.538427 [debug] [MainThread]: Using duckdb connection "master"
+[0m06:06:26.539604 [debug] [MainThread]: On master: COMMIT
+[0m06:06:26.541023 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m06:06:26.542121 [debug] [MainThread]: On master: Close
+[0m06:06:26.555600 [debug] [Thread-1 (]: Began running node model.movie_recommender.ml_feature_table
+[0m06:06:26.557103 [info ] [Thread-1 (]: 1 of 1 START sql table model analytics.ml_feature_table ........................ [RUN]
+[0m06:06:26.558705 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_reco_features_analytics, now model.movie_recommender.ml_feature_table)
+[0m06:06:26.559784 [debug] [Thread-1 (]: Began compiling node model.movie_recommender.ml_feature_table
+[0m06:06:26.566928 [debug] [Thread-1 (]: Writing injected SQL for node "model.movie_recommender.ml_feature_table"
+[0m06:06:26.573542 [debug] [Thread-1 (]: Began executing node model.movie_recommender.ml_feature_table
+[0m06:06:26.604765 [debug] [Thread-1 (]: Writing runtime sql for node "model.movie_recommender.ml_feature_table"
+[0m06:06:26.618674 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.ml_feature_table"
+[0m06:06:26.620631 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: BEGIN
+[0m06:06:26.622478 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m06:06:26.624835 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m06:06:26.626409 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.ml_feature_table"
+[0m06:06:26.627701 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "node_id": "model.movie_recommender.ml_feature_table"} */
+
+  
+    
+    
+
+    create  table
+      "reco_features"."analytics"."ml_feature_table__dbt_tmp"
+  
+    as (
+      
+
+WITH raw_data AS (
+    -- Read from the linked API Database, using the updated ultimate function name
+    SELECT * FROM api_db.raw_movies.fetch_all_api_features
+)
+
+SELECT
+    id AS movie_id,
+    title,
+    popularity,
+    -- Combine ALL the new metadata into the ultimate NLP corpus
+    -- COALESCE prevents the whole string from breaking if one field is missing
+    LOWER(
+        title || ' ' || 
+        COALESCE(genres_flat, '') || ' ' || 
+        COALESCE(cast_flat, '') || ' ' || 
+        COALESCE(director_flat, '') || ' ' || 
+        COALESCE(keywords_flat, '') || ' ' || 
+        COALESCE(studios_flat, '') || ' ' || 
+        COALESCE(overview, '')
+    ) AS combined_features
+FROM raw_data
+WHERE overview IS NOT NULL 
+  AND overview != ''
+    );
+  
+  
+[0m06:06:26.639850 [debug] [Thread-1 (]: SQL status: OK in 0.011 seconds
+[0m06:06:26.646999 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.ml_feature_table"
+[0m06:06:26.648656 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "node_id": "model.movie_recommender.ml_feature_table"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'analytics'
+      AND table_name = 'ml_feature_table'
+  
+[0m06:06:26.651154 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m06:06:26.653932 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.ml_feature_table"
+[0m06:06:26.655507 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "node_id": "model.movie_recommender.ml_feature_table"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'analytics'
+      AND table_name = 'ml_feature_table'
+  
+[0m06:06:26.658067 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m06:06:26.668623 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.ml_feature_table"
+[0m06:06:26.670290 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "node_id": "model.movie_recommender.ml_feature_table"} */
+alter table "reco_features"."analytics"."ml_feature_table" rename to "ml_feature_table__dbt_backup"
+[0m06:06:26.672318 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m06:06:26.676783 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.ml_feature_table"
+[0m06:06:26.678377 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "node_id": "model.movie_recommender.ml_feature_table"} */
+alter table "reco_features"."analytics"."ml_feature_table__dbt_tmp" rename to "ml_feature_table"
+[0m06:06:26.680450 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m06:06:26.697832 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: COMMIT
+[0m06:06:26.700158 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.ml_feature_table"
+[0m06:06:26.701886 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: COMMIT
+[0m06:06:26.719750 [debug] [Thread-1 (]: SQL status: OK in 0.016 seconds
+[0m06:06:26.726561 [debug] [Thread-1 (]: Using duckdb connection "model.movie_recommender.ml_feature_table"
+[0m06:06:26.728672 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: /* {"app": "dbt", "dbt_version": "1.11.11", "profile_name": "movie_recommender", "target_name": "dev", "node_id": "model.movie_recommender.ml_feature_table"} */
+
+      drop table if exists "reco_features"."analytics"."ml_feature_table__dbt_backup" cascade
+    
+[0m06:06:26.734201 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m06:06:26.737872 [debug] [Thread-1 (]: On model.movie_recommender.ml_feature_table: Close
+[0m06:06:26.740520 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '3942b3be-e11a-4dfa-9d3f-f6bf7355936c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74d140f56350>]}
+[0m06:06:26.742119 [info ] [Thread-1 (]: 1 of 1 OK created sql table model analytics.ml_feature_table ................... [[32mOK[0m in 0.18s]
+[0m06:06:26.744749 [debug] [Thread-1 (]: Finished running node model.movie_recommender.ml_feature_table
+[0m06:06:26.747116 [debug] [MainThread]: Using duckdb connection "master"
+[0m06:06:26.748351 [debug] [MainThread]: On master: BEGIN
+[0m06:06:26.749447 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m06:06:26.751136 [debug] [MainThread]: SQL status: OK in 0.002 seconds
+[0m06:06:26.752223 [debug] [MainThread]: On master: COMMIT
+[0m06:06:26.753391 [debug] [MainThread]: Using duckdb connection "master"
+[0m06:06:26.754618 [debug] [MainThread]: On master: COMMIT
+[0m06:06:26.756459 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m06:06:26.758103 [debug] [MainThread]: On master: Close
+[0m06:06:26.759814 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m06:06:26.761031 [debug] [MainThread]: Connection 'model.movie_recommender.ml_feature_table' was properly closed.
+[0m06:06:26.762346 [info ] [MainThread]: 
+[0m06:06:26.764362 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 0.37 seconds (0.37s).
+[0m06:06:26.766816 [debug] [MainThread]: Command end result
+[0m06:06:26.838181 [debug] [MainThread]: Wrote artifact WritableManifest to dbt_transform/target/manifest.json
+[0m06:06:26.844492 [debug] [MainThread]: Wrote artifact SemanticManifest to dbt_transform/target/semantic_manifest.json
+[0m06:06:26.854755 [debug] [MainThread]: Wrote artifact RunExecutionResult to dbt_transform/target/run_results.json
+[0m06:06:26.856262 [info ] [MainThread]: 
+[0m06:06:26.858699 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m06:06:26.860822 [info ] [MainThread]: 
+[0m06:06:26.862982 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m06:06:26.866391 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.5627843, "process_in_blocks": "7708", "process_kernel_time": 0.133164, "process_mem_max_rss": "176112", "process_out_blocks": "504", "process_user_time": 2.304149}
+[0m06:06:26.867663 [debug] [MainThread]: Command `dbt run` succeeded at 06:06:26.867537 after 1.56 seconds
+[0m06:06:26.868770 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74d1873172b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74d179fbe680>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x74d181916740>]}
+[0m06:06:26.870263 [debug] [MainThread]: Flushing usage events
+[0m06:06:27.459495 [debug] [MainThread]: An error was encountered while trying to flush usage events

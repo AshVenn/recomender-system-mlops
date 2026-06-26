@@ -1,0 +1,12 @@
+movie_recommender:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      # Target Database 2: The ML Feature Store
+      path: /app/artifacts/reco_features.duckdb
+      schema: analytics
+      # Link the API database so dbt can read from it
+      attach:
+        - path: /app/artifacts/api_features.duckdb
+          alias: api_db

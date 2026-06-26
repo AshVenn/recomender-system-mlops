@@ -1,0 +1,4 @@
+name: 'movie_recommender'
+version: '1.0.0'
+profile: 'movie_recommender'
+model-paths: ["models"]
